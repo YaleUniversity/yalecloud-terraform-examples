@@ -14,7 +14,7 @@ load_balancer - uses AWS ALB.  Look at the load_balancer module README.md: modul
 
 * mv example-app.tf ${your-app-name}.tf 
 
-* customize the filename itself ${your-app-name}.tf, and follow allong in modules/load_balancer/README.md
+* customize the filename itself ${your-app-name}.tf, and follow along in modules/load_balancer/README.md
 
 * paste ACCESS_KEYs into terminal: 
 
