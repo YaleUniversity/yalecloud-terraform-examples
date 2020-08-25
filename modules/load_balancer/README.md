@@ -4,6 +4,8 @@
 
 Under the ./albs directory create a file well named - e.g. project-name.tf - to represent the new ALB.  You can add many files each representing a different load balancer.
 
+The backend will need to listen on 443 with HTTPS/TLS - self-signed certificates are fine.  Do this with nginx.
+
 #### variables.tf
 
 Inside modules/load_balancer/variables.tf replace the following perl-style variables with elements from your AWS account.  These variables will be reused for every new ALB you add.
