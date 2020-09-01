@@ -26,8 +26,12 @@ load_balancer - uses AWS ALB.  Look at the load_balancer module README.md: modul
 
 * terraform plan
 
+  * terraform will output errors if variables.tf is not updated correctly
+
 * terraform apply
 
 ## License
+
+BSD 2-Clause License
 
 Copyright © 2020 Yale University

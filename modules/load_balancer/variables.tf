@@ -8,12 +8,12 @@ variable "name" {
 
 variable "vpc_id" {
   description = "The VPC id"
-  default     = "${vpcID}"
+  default     = "<vpcID>"
 }
 
 variable "public_subnets" {
   description = "The public subnet id's in this VPC"
-  default     = ["${subnetID01}", "${subnetID02}"]
+  default     = ["<subnetID01>", "<subnetID02>"]
 }
 
 variable "elbsecuritypolicy" {
@@ -23,7 +23,7 @@ variable "elbsecuritypolicy" {
 
 variable "cert" {
   description = "*.example.org wildcard certificate from AWS ACM"
-  default     = "arn:aws:acm:us-east-1:${accountID}:certificate/${certID}"
+  default     = "arn:aws:acm:us-east-1:<accountID>:certificate/<certID>"
 }
 
 variable "target_id" {

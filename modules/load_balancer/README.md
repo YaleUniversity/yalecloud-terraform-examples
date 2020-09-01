@@ -6,18 +6,27 @@ Under the ./albs directory create a file well named - e.g. project-name.tf - to 
 
 The backend will need to listen on 443 with HTTPS/TLS - self-signed certificates are fine.  Do this with nginx.
 
-#### variables.tf
+The ALB access log S3 bucket will be created only during the first run - if it does not exist.
 
-Inside modules/load_balancer/variables.tf replace the following perl-style variables with elements from your AWS account.  These variables will be reused for every new ALB you add.
+#### account specific variables
+
+Replace the following variables with elements from your AWS account: e.g., <vpcID> --> "vpc-nnnnnnnnnnnnnnnnn".  These variables will be reused for every new ALB you add.
+
+##### modules/load_balancer/variables.tf
 
 vpc_id:
-${vpcID}
+<vpcID>
 
 public_subnets:
-${subnetID01},${subnetID02}
+<subnetID01>,<subnetID02>
 
 cert:
-arn:aws:acm:us-east-1:${accountID}:certificate/${certID}
+arn:aws:acm:us-east-1:<accountID>:certificate/<certID>
+
+##### albs/variables.tf
+
+s3_alb_access_log_name:
+<s3-alb-access-log>
 
 #### Replace the following variables on the with albs/project-name.tf
 
