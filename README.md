@@ -30,8 +30,12 @@ load_balancer - uses AWS ALB.  Look at the load_balancer module README.md: modul
 
 * terraform apply
 
+## Author
+
+Darryl Wisneski darryl.wisneski@yale.edu
+
 ## License
 
-BSD 2-Clause License
+GNU Affero General Public License v3.0 (GNU AGPLv3)
 
 Copyright © 2020 Yale University
