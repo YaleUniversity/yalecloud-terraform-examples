@@ -11,7 +11,7 @@ data "aws_elb_service_account" "main" {}
 data "aws_canonical_user_id" "current_user" {}
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "example-app-access-logs"
+  bucket = var.s3_alb_access_log_name
   grant {
     type        = "Group"
     permissions = ["FULL_CONTROL"]
@@ -37,7 +37,7 @@ resource "aws_s3_bucket_policy" "bucket" {
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::example-app-access-logs/*"
+        "arn:aws:s3:::${var.s3_alb_access_log_name}/*"
       ],
       "Principal": {
         "AWS": [
